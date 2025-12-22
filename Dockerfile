@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 # Install PHP extensions
-RUN install-php-extensions gd intl imap pdo_mysql mbstring exif pcntl bcmath zip
+RUN install-php-extensions gd intl imap pdo_mysql mbstring exif pcntl bcmath zip calendar
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
