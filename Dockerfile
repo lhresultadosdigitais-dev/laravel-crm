@@ -39,6 +39,9 @@ RUN npm install && npm run build
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Volumize storage to avoid data loss on container recreation
+VOLUME ["/var/www/html/storage"]
+
 # Configure Apache DocumentRoot to point to public
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
