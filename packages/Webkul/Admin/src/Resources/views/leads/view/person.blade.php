@@ -90,6 +90,15 @@
                                 <span class="text-gray-500 dark:text-gray-300">
                                     ({{ $contactNumber['label'] }})
                                 </span>
+                                
+                                <a 
+                                    href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $contactNumber['value']) }}" 
+                                    target="_blank"
+                                    class="text-green-600 hover:text-green-700 font-semibold ml-2"
+                                    title="Abrir no WhatsApp"
+                                >
+                                    WhatsApp
+                                </a>
                             </div>
                         @endforeach
         
